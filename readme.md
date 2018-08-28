@@ -1,10 +1,10 @@
-# Des'ree bot
+#Des'ree bot
 
-Reads a line from Des'ree's prophetic smash hit 'Life' every five minutes.
+##[@life_by_desree](https://twitter.com/life_by_desree).
 
+This bot reads a line from Des'ree's prophetic smash hit [Life](https://www.youtube.com/watch?v=BKtrWU4zaaI) every ten minutes. You can see the twitter feed at [here](https://twitter.com/life_by_desree). It was inspired by the [africa by toto bot](https://twitter.com/africabytotobot), but this template can be used and adapted to tweet random lines from any file you want.
 
-
-The setup is fairly simple: I have a Dreamhost account, a Python script, and a file I want to read from. The bot runs as a cron job from my Dreamhost account once every 5 minutes.
+The setup is fairly simple: I have a Dreamhost account, a Python script, and a file I want to read from. The bot runs as a cron job from my Dreamhost account once every X minutes. 
 
 Below are the bash instructions to set up this bot on Dreamhost. Most of the files have annotations.
 
@@ -48,8 +48,8 @@ pip3 install virtualenv # not actually necessary, comes pre-installed
 
 ### Now to make the bot!
 ```
-virtualenv movielinesbot
-cd movielinesbot
+virtualenv life-bot
+cd life-bot
 pip install tweepy
 ```
 
@@ -57,9 +57,9 @@ in a separate shell window
 create a test file named ```test.py``` (just contains ```print("Hello World")```) on local machine
 ```
 # cd to folder
-cd /Users/o/Documents/github-root/bots/movielinesbot/
+cd /Users/o/Documents/github-root/bots/life-bot/
 # scp upload file
-scp test.py my-bot@my-dreamhost-server.dreamhost.com:/home/my-bot/movielinesbot
+scp test.py my-bot@my-dreamhost-server.dreamhost.com:/home/my-bot/life-bot
 # enter password
 ```
 
@@ -72,13 +72,12 @@ python test.py
 if it prints "Hello World" - success!
 
 
-### now scrabble to write python code
+###Now scrabble to write python code
 
 I made several files:
 
-- [movie_lines-alphabetised.txt](movie_lines-alphabetised.txt) - a clean "movie lines" document - all duplicates removed
-- [lines_read.csv](lines_read.csv) - a log file (to log time, number of tweets posted, and tweet content)
-- [bot.py](bot.py) - a script to post tweets
+- [life.txt](life.txt) - the file to read lines from
+- [life-bot.py](life-bot.py) - a script to post tweets
 -  ```script.sh``` - a bash script to activate the virtualenv, run the python script with authentication, and then deactivate the virtualenv. this isn't included in GitHub as it has my bot credentials in it - you'll have to look through the [demo-script.sh.txt](demo-script.sh.txt) file here and make some changes to it with your credentials!
 
 
@@ -87,7 +86,7 @@ I made several files:
 - Change the filepaths to point to the ones you set up earlier
 - then ```scp``` entire folder to dreamhost (from non-ssh window):
 ```
-scp * my-bot@my-dreamhost-server.dreamhost.com:/home/my-bot/movielinesbot
+scp * my-bot@my-dreamhost-server.dreamhost.com:/home/my-bot/life-bot
 ```
 
 back to the ssh window! We need to make the script executable:
@@ -107,7 +106,7 @@ See [here](https://help.dreamhost.com/hc/en-us/articles/215088668-How-do-I-creat
 
 This is my Cron command - it just fires up the cron in my [Dreamhost panel](https://panel.dreamhost.com/index.cgi?tree=advanced.cron&)
 ```
-sh /home/my-bot/movielinesbot/script.sh > /dev/null
+sh /home/my-bot/life-bot/script.sh > /dev/null
 ```
 Mine runs every five minutes. You can fire yours up whenever you like.
 
