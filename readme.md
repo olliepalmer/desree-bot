@@ -1,9 +1,8 @@
-# Movie lines bot
+# Des'ree bot
+
+Reads a line from Des'ree's prophetic smash hit 'Life' every five minutes.
 
 
-What does it do? It tweets one line from an alphabetised list of movie dialogue every five minutes, something I did in 2016 ([Github repo here](https://github.com/olliepalmer/48lines)). It was a quick exercise to get my rusty head around Twitter bots in 2018 (as opposed to the last time I made them about 5 years ago...).
-
-This bot can be found at [@al_film_betical](https://twitter.com/al_film_betical)
 
 The setup is fairly simple: I have a Dreamhost account, a Python script, and a file I want to read from. The bot runs as a cron job from my Dreamhost account once every 5 minutes.
 
