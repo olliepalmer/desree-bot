@@ -1,6 +1,6 @@
-#Des'ree bot
+# Des'ree bot
 
-##[@life_by_desree](https://twitter.com/life_by_desree).
+## [@life_by_desree](https://twitter.com/life_by_desree).
 
 This bot reads a line from Des'ree's prophetic smash hit [Life](https://www.youtube.com/watch?v=BKtrWU4zaaI) every ten minutes. You can see the twitter feed at [here](https://twitter.com/life_by_desree). It was inspired by the [africa by toto bot](https://twitter.com/africabytotobot), but this template can be used and adapted to tweet random lines from any file you want.
 
@@ -14,6 +14,9 @@ You will need:
 - A Twitter account set up with Developer credentials, and API keys (see [here](https://www.slickremix.com/docs/how-to-get-api-keys-and-tokens-for-twitter/) for a nice tutorial)
 
 Note that [this file](https://gist.github.com/moonmilk/8d78032debd16f31a8a9) was very useful in setting up my bot! 
+
+Also note that Twitter now has rules about how many times you can post tweets with duplicate content. That means that a lot of the time, this code returns an error message saying that the message it wants to post is a duplicate tweet. If only Des' had written 80 verses like [Leonard Cohen](https://www.theguardian.com/music/2008/dec/19/leonard-cohen-hallelujah-christmas), this wouldn't have been such a problem! But then again, could anyone write that much about such a specific topic as _life_...?
+
 
 ## So, let's begin!
 
@@ -108,6 +111,6 @@ This is my Cron command - it just fires up the cron in my [Dreamhost panel](http
 ```
 sh /home/my-bot/life-bot/script.sh > /dev/null
 ```
-Mine runs every five minutes. You can fire yours up whenever you like.
+Mine runs every ten minutes. You can fire yours up whenever you like.
 
 I hope this helps! Enjoy. :)
