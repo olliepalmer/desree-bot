@@ -29,9 +29,9 @@ done = 0
 
 while done < 1:
 	status = random.choice(list(life))
+	# status = random.choice(list(open('life.txt')))) # uncomment this if you want to load a text file
 
 	try:
-		# api.update_status(random.choice(list(open('life.txt')))) # uncomment this if you want to load a text file
 		api.update_status(status)
 		print("tweeted:",status)
 		done = 1

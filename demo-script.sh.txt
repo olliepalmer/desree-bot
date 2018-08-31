@@ -1,3 +1,5 @@
 #!/bin/bash
-source /home/your-username/movielinesbot/bin/activate
-consumer_key="YOUR_KEY-HERE" consumer_secret="YOUR_SECRET_HERE" access_token="YOUR_TOKEN_HERE" access_token_secret="YOUR_SECRET_HERE" python /home/your-username/movielinesbot/bot.py
+
+# activate your virtual environment
+source /home/your-username/life-bot/bin/activate
+consumer_key="YOUR_KEY-HERE" consumer_secret="YOUR_SECRET_HERE" access_token="YOUR_TOKEN_HERE" access_token_secret="YOUR_SECRET_HERE" python /home/your-username/life-bot/bot.py
