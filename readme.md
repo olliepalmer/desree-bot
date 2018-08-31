@@ -25,7 +25,7 @@ Log into your server via SSH
 ```# enter password```
 
 Install Python3  
-([detailed instructions here](https://help.dreamhost.com/hc/en-us/articles/115000702772-Installing-a-custom-version-of-Python-3))
+([detailed instructions here](https://help.dreamhost.com/hc/en-us/articles/115000702772-Installing-a-custom-version-of-Python-3)). Note that I'm doing this on a Mac, and it might be different on a PC or Linux. (I'm not sure, check the article. :) )
 
 ```bash
 cd ~
@@ -46,11 +46,12 @@ export PATH=$HOME/opt/python-3.6.2/bin:$PATH
 which python3 
 python3 --version
 pip3 install --upgrade pip # just to be sure we're up to date
-pip3 install virtualenv # not actually necessary, comes pre-installed
+pip3 install virtualenv # not actually necessary, comes pre-installed with python 3
 ```
 
 ### Now to make the bot!
 ```
+# cd into wherever you want to install first. in my case it's /Users/your-mac-username/Documents/github-root/bots/
 virtualenv life-bot
 cd life-bot
 pip install tweepy
@@ -59,8 +60,8 @@ pip install tweepy
 in a separate shell window
 create a test file named ```test.py``` (just contains ```print("Hello World")```) on local machine
 ```
-# cd to folder
-cd /Users/o/Documents/github-root/bots/life-bot/
+# cd to folder (note this is just where my bot is located)
+cd /Users/your-mac-username/Documents/github-root/bots/life-bot/
 # scp upload file
 scp test.py my-bot@my-dreamhost-server.dreamhost.com:/home/my-bot/life-bot
 # enter password
@@ -75,13 +76,14 @@ python test.py
 if it prints "Hello World" - success!
 
 
-###Now scrabble to write python code
+### Now scrabble to write python code
 
 I made several files:
 
-- [life.txt](life.txt) - the file to read lines from
 - [life-bot.py](life-bot.py) - a script to post tweets
 -  ```script.sh``` - a bash script to activate the virtualenv, run the python script with authentication, and then deactivate the virtualenv. this isn't included in GitHub as it has my bot credentials in it - you'll have to look through the [demo-script.sh.txt](demo-script.sh.txt) file here and make some changes to it with your credentials!
+-  [life.txt](life.txt) - the file to read lines from (optional - the bot can also read from a list in the Python document)
+
 
 
 - Change the demo-script.sh.txt to be named ```script.sh```
