@@ -1,10 +1,14 @@
 # Des'ree bot
 
+Please note: this bot is now run from Cheap Bots Done Quick! If you want to make a simple bot like [@life_by_desree](https://twitter.com/life_by_desree), I'd recommend trying that first. You save all the faffy setup that I write about here. This bot's source can be found [here](https://cheapbotsdonequick.com/source/life_by_desree).
+
+I'll keep the how-to and all the source code up for reference though. :)
+
 ## [@life_by_desree](https://twitter.com/life_by_desree).
 
 This bot reads a line from Des'ree's prophetic smash hit [Life](https://www.youtube.com/watch?v=BKtrWU4zaaI) every ten minutes. You can see the twitter feed at [here](https://twitter.com/life_by_desree). It was inspired by the [africa by toto bot](https://twitter.com/africabytotobot), but this template can be used and adapted to tweet random lines from any file you want.
 
-The setup is fairly simple: I have a Dreamhost account, a Python script, and a file I want to read from. The bot runs as a cron job from my Dreamhost account once every X minutes. 
+The setup is fairly simple: I have a Dreamhost account, a Python script, and a file I want to read from. The bot runs as a cron job from my Dreamhost account once every X minutes.
 
 Below are the bash instructions to set up this bot on Dreamhost. Most of the files have annotations.
 
@@ -13,7 +17,7 @@ You will need:
 - A username on Dreamhost with access to SSH (or another web provider who'll let you use cron). Note that my username and password have been masked here as 'my-bot' and 'my-dreamhost-server' respectively
 - A Twitter account set up with Developer credentials, and API keys (see [here](https://www.slickremix.com/docs/how-to-get-api-keys-and-tokens-for-twitter/) for a nice tutorial)
 
-Note that [this file](https://gist.github.com/moonmilk/8d78032debd16f31a8a9) was very useful in setting up my bot! 
+Note that [this file](https://gist.github.com/moonmilk/8d78032debd16f31a8a9) was very useful in setting up my bot!
 
 Also note that Twitter now has rules about how many times you can post tweets with duplicate content. That means that a lot of the time, this code returns an error message saying that the message it wants to post is a duplicate tweet. If only Des' had written 80 verses like [Leonard Cohen](https://www.theguardian.com/music/2008/dec/19/leonard-cohen-hallelujah-christmas), this wouldn't have been such a problem! But then again, could anyone write that much about such a specific topic as _life_...?
 
@@ -32,8 +36,8 @@ cd ~
 mkdir tmp
 cd tmp
 wget https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tgz
-tar zxvf Python-3.6.2.tgz 
-cd Python-3.6.2 
+tar zxvf Python-3.6.2.tgz
+cd Python-3.6.2
 ./configure --prefix=$HOME/opt/python-3.6.2
 make
 make install
@@ -43,7 +47,7 @@ nano .bash_profile
 export PATH=$HOME/opt/python-3.6.2/bin:$PATH
 # ctrl-O to save; enter to confirm; ctrl-x to close; now we're back to bash
 # check we have the right python
-which python3 
+which python3
 python3 --version
 pip3 install --upgrade pip # just to be sure we're up to date
 pip3 install virtualenv # not actually necessary, comes pre-installed with python 3
@@ -107,7 +111,7 @@ If it works you'll see a tweet on your account. If not, something messed up and 
 
 ### Setting a Cron job on Dreamhost
 
-See [here](https://help.dreamhost.com/hc/en-us/articles/215088668-How-do-I-create-a-cron-job-) for help with this 
+See [here](https://help.dreamhost.com/hc/en-us/articles/215088668-How-do-I-create-a-cron-job-) for help with this
 
 This is my Cron command - it just fires up the cron in my [Dreamhost panel](https://panel.dreamhost.com/index.cgi?tree=advanced.cron&)
 ```
